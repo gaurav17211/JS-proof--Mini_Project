@@ -1,0 +1,54 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+let NFTs=[];
+
+//Here we created the metadata for the Cricket players
+// playerName,playerRole,playerJersey_No,player_playing_or_not
+
+function mintNFT (p_name,p_role,p_jerseyNo,p_inTeam) {
+        let NFT={
+        "p_name":p_name,
+        "role":p_role,
+        "jerseyNo":p_jerseyNo,
+        "inTeam":p_inTeam
+        }
+        NFTs.push(NFT);
+        console.log();
+        console.log("Metadata Name:-",NFT.p_name);
+        for (const key in NFT) {
+        console.log(key,"->",NFT[key]);
+    }
+    console.log();
+}
+
+//Printing the metaData here
+function listNFTs () {
+    let x=NFTs.length;
+    for(let i=0;i<x;i++){
+        console.log(NFTs[i]);
+    }
+}
+function getTotalSupply() {
+    console.log("Total Number of the NFTs :-",NFTs.length);
+}
+
+// calling the functions
+mintNFT("MS Dhoni","Wicket-Keeper",7,true);
+mintNFT("Virat Kohli","Batsman",18,true);
+mintNFT("Jasprit Bumhra","Bowler",93,true);
+mintNFT("Sachin Tendulkar","Batsman",10,false);
+mintNFT("Ravindra Jadeja","Allrounder",8,true);
+
+listNFTs();
+getTotalSupply();
+
+console.log("Lots of love from INDIA !!!")
+console.log("ThankYou !!!");
